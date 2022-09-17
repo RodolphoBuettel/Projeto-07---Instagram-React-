@@ -1,19 +1,23 @@
 
-
-
-export default function Usuario() {
-
-    return (
+function Dados(props){
+    return(
         <div class="usuario">
-            <img src="assets/img/catanacomics.svg" />
+            <img src={props.imagem} />
             <div class="texto">
-                <strong>catanacomics</strong>
+                <strong>{props.texto}</strong>
                 <span>
-                    Catana
+                   {props.span}
                     <ion-icon name="pencil"></ion-icon>
                 </span>
             </div>
         </div>
+    )
+}
+
+export default function Usuario() {
+
+    return (
+        <Dados imagem = "assets/img/catanacomics.svg" texto = "catanacomics" span = "Catana" />
     );
 
 }
