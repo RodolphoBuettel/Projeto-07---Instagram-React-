@@ -74,6 +74,14 @@ body {
   display: none;
 }
 
+.salvo{
+  color: black;
+}
+
+.red{
+  color: red;
+}
+
 .corpo {
   display: flex;
   justify-content: space-between;
