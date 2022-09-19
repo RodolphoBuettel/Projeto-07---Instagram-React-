@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function Dados(props){
+function Dados(){
     const [nome, setNome] = React.useState("Catana");
     const [nomeDeUsuario, setNomeDeUsuario] = React.useState("catanacomics");
     const [usuario, setUsuario] = React.useState("assets/img/catanacomics.svg");
@@ -47,7 +47,7 @@ function Dados(props){
 export default function Usuario() {
 
     return (
-        <Dados   />
+        <Dados/>
     );
 
 }

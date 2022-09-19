@@ -4,17 +4,17 @@ function Post(props) {
     const [like, setLike] = React.useState("heart-outline");
     const [clicado, setClicado] = React.useState("normal");
     const [salvar, setSalvar] = React.useState("bookmark-outline");
-    const [Numcurtidas, setCurtidas] = React.useState(props.curtidas);
+    const [Numcurtidas, setNumurtidas] = React.useState(props.curtidas);
 
     function curtir() {
         if (like === "heart-outline") {
             setLike("heart");
             setClicado("vermelho");
-            setCurtidas(Numcurtidas + 1);
+            setNumurtidas(Numcurtidas + 1);
         } else {
             setLike("heart-outline");
             setClicado("normal")
-            setCurtidas(Numcurtidas - 1);
+            setNumurtidas(Numcurtidas - 1);
         }
     }
     function salvo() {
@@ -44,12 +44,12 @@ function Post(props) {
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon onClick={curtir} name={like} role="img" class={clicado} aria-label={like}></ion-icon>
+                        <ion-icon onClick={curtir} name={like} class={clicado} ></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon onClick={salvo} name={salvar} role="img" class="md hydrated" aria-label={salvar}></ion-icon>
+                        <ion-icon onClick={salvo} name={salvar}></ion-icon>
                     </div>
                 </div>
 
