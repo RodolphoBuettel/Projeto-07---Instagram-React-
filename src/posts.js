@@ -2,18 +2,18 @@ import React from "react";
 
 function Post(props){
     const[like, setLike] = React.useState("heart-outline");
-    const[clicado, setClicado] = React.useState("salvo");
+    const[clicado, setClicado] = React.useState("normal");
     const [salvar, setSalvar] = React.useState("bookmark-outline");
     const [curtidas1, setCurtidas] = React.useState(props.curtidas);
   
     function curtir(){
       if(like === "heart-outline"){
         setLike("heart");
-        setClicado("red");
+        setClicado("vermelho");
         setCurtidas(curtidas1 + 1);
       }else{
         setLike("heart-outline");
-        setClicado("salvo")
+        setClicado("normal")
         setCurtidas(curtidas1 - 1);
       }
     }
