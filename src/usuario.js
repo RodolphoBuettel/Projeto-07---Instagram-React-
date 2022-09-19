@@ -3,21 +3,38 @@ import React from "react";
 
 function Dados(props){
     const [nome, setNome] = React.useState("Catana");
+    const [nomeDeUsuario, setNomeDeUsuario] = React.useState("catanacomics");
     const [usuario, setUsuario] = React.useState("assets/img/catanacomics.svg");
     function inserirNome(){
         const nomePrompt = prompt("Qual o seu nome?");
-        setNome(nomePrompt);
+        const semNome = "Não sabemos seu nome :(";
+        if(nomePrompt != undefined){
+            setNome(nomePrompt);
+            setNomeDeUsuario(nomePrompt);
+        }
+        else{    
+            setNomeDeUsuario(semNome);
+            setNome(semNome);
+        }
     }
 
     function inserirImagem(){
         const usuarioPrompt = prompt("Insira o link da imagem");
-        setUsuario(usuarioPrompt);
+        const semFoto = "https://www.publicdomainpictures.net/pictures/40000/nahled/question-mark.jpg";
+        if(usuarioPrompt != undefined){
+            setUsuario(usuarioPrompt);
+        }
+        else{
+            setUsuario(semFoto);
+        }
+        
+       
     }
     return(
         <div class="usuario">
             <img onClick={inserirImagem} src={usuario} />
             <div class="texto">
-                <strong>{props.texto}</strong>
+                <strong>{nomeDeUsuario}</strong>
                 <span>
                    {nome}
                     <ion-icon name="pencil" onClick = {inserirNome}></ion-icon>
@@ -30,7 +47,7 @@ function Dados(props){
 export default function Usuario() {
 
     return (
-        <Dados  texto = "catanacomics" />
+        <Dados   />
     );
 
 }
